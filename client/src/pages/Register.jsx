@@ -28,7 +28,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/v1/auth/register", {
+      await axios.post("https://chatgpt-clone-server-p2dj.onrender.com/api/v1/auth/register", {
         username,
         email,
         password

@@ -13,6 +13,7 @@ import Paragraph from "./pages/Paragraph";
 import ChatBot from "./pages/ChatBot";
 import JsConverter from "./pages/JsConverter";
 import ScifiImage from "./pages/ScifiImage";
+import Footer from "./components/Footer";
 
 function App() {
   const theme = useMemo(() => createTheme(themeSettings()), []);
@@ -33,6 +34,7 @@ function App() {
           <Route path="/js-converter" element={<JsConverter />} />
           <Route path="/scifi-image" element={<ScifiImage />} />
         </Routes>
+        <Footer />
       </ThemeProvider>
     </>
   );

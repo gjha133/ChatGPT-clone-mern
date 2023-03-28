@@ -27,7 +27,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("/api/v1/auth/login", { email, password });
+      await axios.post("https://chatgpt-clone-server-p2dj.onrender.com/api/v1/auth/login", { email, password });
       toast.success("Logged in Successfully");
       localStorage.setItem("authToken", true);
       navigate("/");

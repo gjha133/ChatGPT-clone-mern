@@ -29,7 +29,7 @@ const ScifiImage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/v1/openai/scifi-image", { text });
+      const { data } = await axios.post("https://chatgpt-clone-server-p2dj.onrender.com/api/v1/openai/scifi-image", { text });
       console.log(data);
       setImage(data);
     } catch (err) {

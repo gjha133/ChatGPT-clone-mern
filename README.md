@@ -8,7 +8,7 @@ ChatGPT (GPT-3) Clone with additional features:
 
 using OpenAI API. 
 <br>
-MERN App with auth.
+MERN Web-App with auth.
 
 
 ## How to run the application locally: 

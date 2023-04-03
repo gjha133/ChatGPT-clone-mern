@@ -14,7 +14,7 @@ const Navbar = () => {
     try {
       await axios.post("https://chatgpt-clone-server-p2dj.onrender.com/api/v1/auth/logout");
       localStorage.removeItem("authToken");
-      toast.success("logout successfully ");
+      toast.success("Logged out successfully ");
       navigate("/login");
     } catch (error) {
       console.log(error);

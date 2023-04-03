@@ -74,7 +74,7 @@ exports.jsconverterController = async (req, res) => {
     const { text } = req.body;
     const { data } = await openai.createCompletion({
       model: "text-davinci-002",
-      prompt: `/* convert these instruction into javascript code \n${text}`,
+      prompt: `/* convert these instructions into javascript code \n${text}`,
       max_tokens: 400,
       temperature: 0.25,
     });

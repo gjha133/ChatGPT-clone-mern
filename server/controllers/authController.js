@@ -18,7 +18,7 @@ exports.registerContoller = async (req, res, next) => {
     //exisitng user
     const exisitingEmail = await userModel.findOne({ email });
     if (exisitingEmail) {
-      return next(new errorResponse("Email is already register", 500));
+      return next(new errorResponse("Email is already registered", 500));
     }
     const user = await userModel.create({ username, email, password });
     this.sendToken(user, 201, res);
@@ -38,11 +38,11 @@ exports.loginController = async (req, res, next) => {
     }
     const user = await userModel.findOne({ email });
     if (!user) {
-      return next(new errorResponse("Invalid Creditial", 401));
+      return next(new errorResponse("Invalid Credentials", 401));
     }
     const isMatch = await user.matchPassword(password);
     if (!isMatch) {
-      return next(new errorResponse("Invalid Creditial", 401));
+      return next(new errorResponse("Invalid Credentials", 401));
     }
     //res
     this.sendToken(user, 200, res);
@@ -57,6 +57,6 @@ exports.logoutController = async (req, res) => {
   res.clearCookie("refreshToken");
   return res.status(200).json({
     success: true,
-    message: "Logout Succesfully",
+    message: "Logged out Succesfully",
   });
 };
